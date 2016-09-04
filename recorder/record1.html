@@ -1,0 +1,30 @@
+
+<html>
+    <head>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>    
+    <script>
+   
+     function test(){
+         
+          navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+        .then((stream) => {
+             console.log(stream);
+             video.srcObject = stream;
+        })
+        .catch(e => log(e.name + ": "+ e.message));
+
+        var log = msg => div.innerHTML += msg + "<br>";
+
+      }
+
+          
+  
+    </script>
+    </head>
+   
+   <video id="video" width="160" height="120" autoplay></video><br>
+   <div id="div"></div>
+
+  <button onclick="test()">Click me</button>
+  
+</html>
